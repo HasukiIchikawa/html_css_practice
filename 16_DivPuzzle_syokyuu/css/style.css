@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* ::after → 指定したセレクタの最後の子要素として擬似的な要素を生成する */
+/* .clearfixが適用されている要素はその最後の要素で回り込みが解除されるため、続く要素にはfloatプロパティの影響は考えなくてよくなる */
+.clearfix::after {
+    content: "";
+    display: block;
+    /* 両サイドの回り込みを解除 */
+    clear: both;
+}
+
+body {
+    margin: 0;
+}
+
+.red--box {
+    width: 400px;
+    height: 100px;
+    background: #ff0000;
+}
+
+.green--box {
+    width: 150px;
+    height: 250px;
+    background: #00ff1e;
+    /* ブロックレベル要素は基本縦に並ぶが、横並びに配置する目的でfloatプロパティを利用する */
+    /* 要素を左に寄せて配置し、続く要素を反対側に回り込めるようにする */
+    float: left;
+}
+
+.blue--box {
+    width: 250px;
+    height: 250px;
+    background: #3300ff;
+    float: left;
+}
+
+.yellow--box {
+    width: 400px;
+    height: 100px;
+    background: #ffe600;
+}
